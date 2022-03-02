@@ -26,14 +26,22 @@ namespace DataAccess.Concrete
 
         public bool KisiEkle(Kisi kisi)
         {
-            _context.Kisiler.Add(kisi);
-            return _context.SaveChanges() > 0;
+            if (kisi != null)
+            {
+                _context.Kisiler.Add(kisi);
+                return _context.SaveChanges() > 0;
+            }
+            return false;
         }
 
         public bool KisiGuncelle(Kisi kisi)
         {
-            _context.Kisiler.Update(kisi);
-            return _context.SaveChanges() > 0;
+            if (kisi != null)
+            {
+                _context.Kisiler.Update(kisi);
+                return _context.SaveChanges() > 0;
+            }
+            return false;
         }
 
         public bool KisiSil(int id)
