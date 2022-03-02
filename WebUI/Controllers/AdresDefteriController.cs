@@ -29,7 +29,7 @@ namespace WebUI.Controllers
         public IActionResult Create(AdresDefteri nesne)
         {
             _adresDefteriRepository.AdresDefteriEkle(nesne);
-          nesne.KisiId = Convert.ToInt32( HttpContext.Session.GetInt32("Id"));
+          //nesne.KisiId = Convert.ToInt32( HttpContext.Session.GetInt32("Id"));
             return RedirectToAction("Index");
         }
         [HttpGet]
